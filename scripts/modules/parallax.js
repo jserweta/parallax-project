@@ -1,3 +1,5 @@
+//Functions that are responsible for detecting sections and performing parallax animations for each section
+
 let navbarHeight = document.querySelector("nav").offsetHeight
 let rootMarginBottom = window.innerHeight - navbarHeight
 
@@ -11,8 +13,9 @@ let direction = true
 const parallaxIntersectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            if (entry.target.id == "travelling"){
-                //First section - mountains
+
+            //Animations for first section - travelling
+            if (entry.target.id == "travelling") {
                 const bg = document.querySelector(".parallax #background-1")
                 const moon = document.querySelector(".parallax #moon")
                 const mountain = document.querySelector(".parallax #mountain")
@@ -23,7 +26,7 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
 
                 window.addEventListener("scroll", () => {
                     let value = window.scrollY
-                    
+
                     bg.style.top = value * 0.5 + "px"
                     moon.style.left = -value * 0.5 + "px"
                     mountain.style.top = -value * 0.15 + "px"
@@ -31,18 +34,15 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                     campervan.style.left = value * 0.15 + "px"
                     road.style.top = value * 0.15 + "px"
                     header[0].style.top = value * 1 + "px"
-                
+
                 })
-                
-            }else if (entry.target.id == "sunset") {
-                //Second section - sunset
+                //Animations for second section - sunset
+            } else if (entry.target.id == "sunset") {
                 const bg2 = document.querySelector("#background-2")
                 const sun = document.querySelector("#sun")
                 const bird1 = document.querySelector("#bird-1")
                 const bird2 = document.querySelector("#bird-2")
                 const swing = document.querySelector("#swing")
-
-                let contentSec = document.getElementById(entry.target.id).querySelector(".content")
 
                 window.addEventListener("scroll", () => {
                     let positionFromTop = document.querySelector("#sunset").offsetTop
@@ -69,22 +69,20 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                         }
                     }
                 })
+                //Animations for third section - city
             } else if (entry.target.id == "city") {
-                //Third section - city
                 const cityCar = document.querySelector("#city-car")
                 const cityRoad = document.querySelector("#city-road")
                 const citySkyscraper = document.querySelector("#city-skyscraper")
                 const citySky = document.querySelector("#city-sky")
 
-                let contentSec = document.getElementById(entry.target.id).querySelector(".content")
-              
                 window.addEventListener("scroll", () => {
                     let positionFromTop = document.querySelector("#city").offsetTop
                     let offset = positionFromTop - navbarHeight
 
                     let value = window.scrollY - positionFromTop
                     if (window.scrollY >= offset) {
-                        
+
                         cityCar.style.top = -value * 0.1 + "px"
                         cityCar.style.left = -value * 0.8 + "px"
                         cityRoad.style.bottom = value * 0.15 + "px"
@@ -92,14 +90,12 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                         citySky.style.top = -value * 0.6 + "px"
                     }
                 })
-            }else if (entry.target.id == "lake"){
-                //Fourth section - lake
+                //Animations for fourth section - lake
+            } else if (entry.target.id == "lake") {
                 const lakeCoast = document.querySelector("#coast")
                 const boatMidBottom = document.querySelector("#boat-middle-bottom")
                 const boatRight = document.querySelector("#boat-right")
                 const lakeMountains = document.querySelector("#lake-mountains")
-
-                let contentSec = document.getElementById(entry.target.id).querySelector(".content")
 
                 window.addEventListener("scroll", () => {
                     let positionFromTop = document.querySelector("#lake").offsetTop
@@ -108,15 +104,15 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                     let value = window.scrollY - positionFromTop
                     if (window.scrollY >= offset) {
                         lakeCoast.style.top = value * 0.1 + "px"
-                        
+
                         lakeMountains.style.top = -value * 0.2 + "px"
 
-                        boatMidBottom.style.top = value * 0.3 +"px"
+                        boatMidBottom.style.top = value * 0.3 + "px"
                         boatMidBottom.style.left = -value * 0.1 + "px"
-                       
+
                         boatRight.style.top = value * 0.1 + "px"
                         boatRight.style.left = value * 0.2 + "px"
-                    } 
+                    }
                 })
             }
         }

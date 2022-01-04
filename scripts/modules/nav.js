@@ -3,7 +3,8 @@ let sticky = navbar.offsetTop
 let targets
 let navItem
 
-function getAllNewElements(){
+//Exported function to refresh variables when new elements are added to navBar
+function getAllNewElements() {
   targets = document.querySelectorAll('.parallax')
   navItem = document.querySelectorAll(".nav-item")
 
@@ -23,8 +24,8 @@ window.addEventListener("scroll", () => {
   }
 })
 
-function underlineNavElements(){
-  //Underline active element - navbar
+//Underline active element in navbar by adding 'active' class on user click
+function underlineNavElements() {
   navItem.forEach(item => {
     item.addEventListener("click", () => {
       navItem.forEach(item => item.classList.remove("active"))
@@ -36,8 +37,8 @@ function underlineNavElements(){
   })
 }
 
-function detectSectionsInViewport(){
-  //Detect section in viewport
+//Underline active element in navbar by detecting section in viewport
+function detectSectionsInViewport() {
   let navbarHeight = document.querySelector("nav").offsetHeight
   let rootMarginBottom = window.innerHeight - navbarHeight
 
@@ -48,18 +49,18 @@ function detectSectionsInViewport(){
 
   let intersectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        let currItem
-        if (entry.isIntersecting) {
-            let navItem = document.querySelectorAll(".nav-item")
+      let currItem
+      if (entry.isIntersecting) {
+        let navItem = document.querySelectorAll(".nav-item")
 
-            navItem.forEach(item => {
-                item.classList.remove("active")
-                if (item.getAttribute("data-target") == entry.target.parentElement.getAttribute("data-anchor")) {
-                    currItem = item
-                }
-            })
-            currItem.classList.add('active')
-        }
+        navItem.forEach(item => {
+          item.classList.remove("active")
+          if (item.getAttribute("data-target") == entry.target.parentElement.getAttribute("data-anchor")) {
+            currItem = item
+          }
+        })
+        currItem.classList.add('active')
+      }
     });
   }, options);
 
