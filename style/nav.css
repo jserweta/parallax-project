@@ -8,7 +8,6 @@ nav {
     background: #09151e;
     z-index: 1000;
     display: flex;
-  
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
@@ -57,12 +56,3 @@ nav {
 .active {
     position: relative;
 }
-
-/* .active{
-    background: transparent;
-    border-radius: 10px;
-    height: 4px;
-    width: 255px;
-    box-shadow: 0 55px 0 0 #000;
-    font-family: sans-serif;
-     */

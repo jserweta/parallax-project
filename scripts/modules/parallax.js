@@ -67,10 +67,7 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                             swing.style.transform = "skewX(" + deg + "deg) translateY(-10px)"
                             if (deg <= -10) direction = true
                         }
-                        //header[1].style.top = value * 0.7 + "px"
                     }
-                   
-                    
                 })
             } else if (entry.target.id == "city") {
                 //Third section - city
@@ -80,8 +77,7 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                 const citySky = document.querySelector("#city-sky")
 
                 let contentSec = document.getElementById(entry.target.id).querySelector(".content")
-                // let scale = 1
-                // let lastScrollTop = 0
+              
                 window.addEventListener("scroll", () => {
                     let positionFromTop = document.querySelector("#city").offsetTop
                     let offset = positionFromTop - navbarHeight
@@ -91,25 +87,11 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                         
                         cityCar.style.top = -value * 0.1 + "px"
                         cityCar.style.left = -value * 0.8 + "px"
-                        //cityCar.style.transform = "scale("+ scale +")"
                         cityRoad.style.bottom = value * 0.15 + "px"
                         citySkyscraper.style.top = -value * 0.15 + "px"
                         citySky.style.top = -value * 0.6 + "px"
-                        
-                        // let st = window.pageYOffset || document.documentElement.scrollTop; 
-                   
-                        // if (st > lastScrollTop){
-                        //     scale = scale >= 0.4 ? scale - 0.01 : scale
-                        //  } else {
-                        //     scale = scale < 1 ? scale + 0.01 : scale
-                        //  }
-                        // lastScrollTop = st <= 0 ? 0 : st;
-
                     }
-                
                 })
-
-
             }else if (entry.target.id == "lake"){
                 //Fourth section - lake
                 const lakeCoast = document.querySelector("#coast")
@@ -137,7 +119,6 @@ const parallaxIntersectionObserver = new IntersectionObserver((entries, observer
                     } 
                 })
             }
-
         }
     });
 }, options);

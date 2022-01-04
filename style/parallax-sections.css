@@ -7,7 +7,7 @@
     text-align: center;
     line-height: 1;
 }
-/* .parallax::after */
+
 #travelling .parallax::before
  {
     content: '';
@@ -18,13 +18,6 @@
     height: 100px;
     background: linear-gradient(to top, #09151e, transparent);
 }
-
-/* .parallax::after{
-    height: 100%;
-    background: #000000;
-    opacity: 0.3;
-    mix-blend-mode: multiply;
-} */
 
 .parallax {
     position: relative;
@@ -68,10 +61,7 @@
     z-index: 4;
 }
 
-
-
 /* Second section - sunset */
-
 #background-2{
     z-index: 0;
 }
@@ -90,14 +80,6 @@
 #beach, #sun{
     z-index: 1;
 }
-/* #sunset .parallax-header{
-    z-index: 1;
-}
-#sunset .parallax{
-    justify-content: start;
-    padding-top: 6%;
-} */
-
 
 @media screen and (max-width: 576px){
     #bird-2{
@@ -106,7 +88,6 @@
 }
 
 /* Third section - urban jungle */
-
 #city-sky{
     z-index: 0;
 }
@@ -117,17 +98,11 @@
     object-position: right center;
     z-index: 3;
 }
-/* @media screen and (max-width:576px){
-    #city-car{
-        transform: scale(0.2);
-    }
-} */
 #city-road{
     z-index: 2;
 }
 
 /* Fourth section - lake */
-
 #boat-left, #boat-middle-top, #boat-middle-bottom, #boat-right, #coast {
     z-index: 3;
 }
