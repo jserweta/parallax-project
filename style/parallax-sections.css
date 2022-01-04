@@ -1,0 +1,141 @@
+.parallax-header {
+    position: relative;
+    color: #ffffff;
+    font-size: 8em;
+    z-index:2;
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 1;
+}
+/* .parallax::after */
+#travelling .parallax::before
+ {
+    content: '';
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #09151e, transparent);
+}
+
+/* .parallax::after{
+    height: 100%;
+    background: #000000;
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+} */
+
+.parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#moon {
+    object-position: right center;
+    z-index: 3;
+}
+#clouds{
+    z-index:1;
+}
+#road {
+    z-index: 3;
+}
+#background{
+    z-index:0;
+}
+#mountain{
+    z-index: 2;
+}
+
+#campervan {
+    z-index: 4;
+}
+
+
+
+/* Second section - sunset */
+
+#background-2{
+    z-index: 0;
+}
+
+#swing{
+    z-index: 2;
+}
+#bird-1, #bird-2 {
+    z-index: 3;
+}
+
+#bird-1, #sun{
+    object-position: left center;
+}
+
+#beach, #sun{
+    z-index: 1;
+}
+/* #sunset .parallax-header{
+    z-index: 1;
+}
+#sunset .parallax{
+    justify-content: start;
+    padding-top: 6%;
+} */
+
+
+@media screen and (max-width: 576px){
+    #bird-2{
+        display: none;
+    }
+}
+
+/* Third section - urban jungle */
+
+#city-sky{
+    z-index: 0;
+}
+#city-skyscraper{
+    z-index: 1;
+}
+#city-car{
+    object-position: right center;
+    z-index: 3;
+}
+/* @media screen and (max-width:576px){
+    #city-car{
+        transform: scale(0.2);
+    }
+} */
+#city-road{
+    z-index: 2;
+}
+
+/* Fourth section - lake */
+
+#boat-left, #boat-middle-top, #boat-middle-bottom, #boat-right, #coast {
+    z-index: 3;
+}
+
+#lake-background{
+    z-index: 2;
+}
+
+#lake-mountains{
+    z-index: 1;
+}
